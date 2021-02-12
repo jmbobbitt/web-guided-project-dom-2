@@ -3,22 +3,33 @@ console.log('project is up')
 // 👉 TASK 1- Select the following elements from the DOM:
 
 // A- BUTTONS
-const launchButton = null
-const confirmButton = null
-const cancelButton = null
+const launchButton = document.querySelector('#launchButton')
+const confirmButton = document.querySelector('#confirmButton')
+const cancelButton = document.querySelector('#cancelButton')
 
 // B- MESSAGES
-const successMessage = null
-const failureMessage = null
+const successMessage = document.querySelector('h1.success')
+const failureMessage = ndocument.querySelector('h1.failure')
 
 // C- MODAL
-const modal = null
+const modal = document.querySelector('div.modal')
 
+function launch(event){
+    modal.classList.remove('off')
+}
+launchButton.addEventListener('click', colorChanger)
+launchButton.addEventListener('click', launch)
+function colorChanger(event) {
+    document.documentElement.style.backgroundColor = 'red'
+    event.stopImmediatePropagation()
+}	
 
 // 👉 TASK 2- Demo handling click events on button#launchButton, using:
 //  A- HTML inside index.html
 //  B- The DOM's element.onclick attribute
 //  C- element.addEventListener('click', callback)
+
+
 
 
 // 👉 TASK 3- Create a function that launches!
@@ -40,6 +51,11 @@ const modal = null
 // the user hits the Escape key on their keyboard.
 // Add it as an event listener for 'keydown' events on document.
 
+document.addEventListener('keydown', event => {
+    if(event.key === 'Escape') {
+        modal.classList
+    }
+})
 
 // 👉 TASK 7- Add to ALL ELEMENTS ON THE PAGE an event listener for click events.
 // It should console.log the target 🎯 of the event.
